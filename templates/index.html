@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="imagens/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/favicon/favicon.ico') }}" type="image/x-icon">
     <title>Iluá</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,14 +15,14 @@
     <main>
         <header>
             <div id="headerLogo">
-                <img src="imagens/favicon/android-chrome-512x512.png" alt="logo" id="logo">
+                <img src="{{ url_for('static', filename='assets/images/android-chrome-512x512.png') }}" alt="logo" id="logo">
                 <h1 id="logoName">Iluá</h1>
             </div>
 
             <form id="form-search">
                     <input type="text" id="search-input" placeholder="Pesquisar..." required>
                     <button type="submit" id="button">
-                        <img src="imagens/lupa.png" alt="Pesquisar" id="imgButton">                    </button>
+                        <img src="{{ url_for('static', filename='assets/images/lupa.png') }}" alt="Pesquisar" id="imgButton">                    </button>
             </form>
 
             <div id="headerSocial">
