@@ -1,0 +1,113 @@
+*
+{
+    margin: 0%;
+    padding: 0%;
+}
+
+header
+{
+    margin: 0%;
+    padding: 0%;
+    background-image: linear-gradient(to right, #73f5a0, #3f8658);
+    display: flex;
+    position: relative;
+    width: 100vw;
+    height: 11vw;
+}
+
+#headerLogo
+{
+    display: flex;
+    flex-direction: row;
+    background-color: #3f8658;
+    align-content: center;
+    width: 14vw;
+    height: 6vw;
+    margin-left: 3vw;
+    margin-top: 2.5vw;
+    border-radius: 10px;
+}
+
+#logo
+{
+    width: 5vw;
+    height: 5vw;
+    margin-left: 1vw;
+    margin-top: 1vh;
+    padding: auto;
+}
+
+#logoName
+{
+    font-family: "Open Sans", sans-serif;
+    font-size: 3vw;
+    margin-left: 1vw;
+    margin-top: 1vw;
+}
+
+#form-search
+{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    background-color: #2f6442;
+    border: 0.5px rgba(245, 245, 245, 0.651) solid;
+    border-radius: 50px;
+    height: 7vh;
+    margin-top: 1vw;
+    left: 50%;
+    transform: translate(-50%);
+
+}
+
+#search-input
+{
+    order: 1;
+    font-family: "Open Sans";
+    font-weight: 200;
+    font-size: large;
+    color: white;
+    margin-left: 1vw;
+    background: none;
+    cursor: text;
+    border: none;
+    width: 35vw;
+}
+
+#search-input:focus
+{
+    outline: none;
+    border: none;
+}
+
+#search-input::placeholder
+{
+    font-family: "Open Sans";
+    font-weight: 200;
+    font-size: large;
+    color: white;
+}
+
+#button
+{
+    order: 0;
+    background-color: #42885a;
+    border: none;
+    border-right: 0.5px rgba(245, 245, 245, 0.651) solid;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    cursor: pointer;
+    width: 5vw;
+    height: 7vh;
+}
+#button:hover
+{
+    background-color: #3c7c52;
+}
+
+#imgButton
+{
+    width: 5vh;
+    height: 5vh;
+    transform: scaleX(-1);
+}
