@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="/result" method="post">
+        {% for question in questions %}
+        <p>{{ question.ask }} </p>
+
+        <input type="radio" name="{{ question.id }}" value="{{ question.a }}">
+        {{ question.a }}
+        <input type="radio" name="{{ question.id}}"  value="{{ question.b }}">
+        {{ question.b }}
+        <input type="radio" name="{{ question.id }}" value="{{ question.c }}">
+        {{ question.c }}
+        <input type="radio" name="{{ question.id }}" value="{{ question.d }}">
+        {{ question.d }}
+        <input type="radio" name="{{ question.id }}" value="{{ question.e }}">
+        {{ question.e }}
+        {% endfor %}
+
+        <button type="submit">Enviar</button>
+    </form>
+    
+</body>
+
+</html>
