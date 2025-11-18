@@ -5,28 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
 </head>
 
 <body>
-    <form action="/result" method="post">
-        {% for question in questions %}
-        <p>{{ question.ask }} </p>
+    <div class="form-content">
+        <form action="" method="post">
+            <p class="title">Qual o nome cientifico do {{ question.ask }}?</p>
+            <div> 
+                <input type="radio" name="qu" value="{{ question.a }}">
+                {{ question.a }}</div>
 
-        <input type="radio" name="{{ question.id }}" value="{{ question.a }}">
-        {{ question.a }}
-        <input type="radio" name="{{ question.id}}"  value="{{ question.b }}">
-        {{ question.b }}
-        <input type="radio" name="{{ question.id }}" value="{{ question.c }}">
-        {{ question.c }}
-        <input type="radio" name="{{ question.id }}" value="{{ question.d }}">
-        {{ question.d }}
-        <input type="radio" name="{{ question.id }}" value="{{ question.e }}">
-        {{ question.e }}
-        {% endfor %}
+            <div>
+                <input type="radio" name="qu" value="{{ question.b }}">
+                {{ question.b }}
+            </div>
 
-        <button type="submit">Enviar</button>
-    </form>
-    
+            <div>
+                <input type="radio" name="qu" value="{{ question.c }}">
+                {{ question.c }}
+            </div>
+
+            <div>
+                <input type="radio" name="qu" value="{{ question.d }}">
+                {{ question.d }}
+            </div>
+
+            <div>
+                <input type="radio" name="qu" value="{{ question.e }}">
+                {{ question.e }}
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
 </body>
 
 </html>
