@@ -26,7 +26,7 @@ def search_plant():
 @app.route("/game", methods=["POST", "GET"])
 def game():
     if "index" not in session:
-        questions = gen_questions("data.csv", 12, "Nome Popular", "Nome Científico")
+        questions = gen_questions("data.csv", 60, "Nome Popular", "Nome Científico")
         session["questions"] = [
             {"ask": q.ask, "a": q.a, "b":q.b, "c": q.c, "d": q.d, "e": q.e, "correct": q.correct}
             for q in questions
