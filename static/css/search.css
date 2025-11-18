@@ -18,31 +18,40 @@ header
 #headerLogo
 {
     display: flex;
-    flex-direction: row;
     background-color: #3f8658;
     align-content: center;
-    width: 14vw;
+    width: 14.5vw;
     height: 6vw;
     margin-left: 3vw;
     margin-top: 2.5vw;
     border-radius: 10px;
 }
 
+#buttonLOGO
+{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 #logo
 {
     width: 5vw;
     height: 5vw;
-    margin-left: 1vw;
+    margin-left: 0.6vw;
     margin-top: 1vh;
-    padding: auto;
 }
 
 #logoName
 {
     font-family: "Open Sans", sans-serif;
-    font-size: 3vw;
-    margin-left: 1vw;
-    margin-top: 1vw;
+    font-size: 2.4vw;
+    margin-left: 0.5vw;
+    margin-top: 1.4vw;
 }
 
 #form-search
@@ -53,12 +62,13 @@ header
     background-color: #2f6442;
     border: 0.5px rgba(245, 245, 245, 0.651) solid;
     border-radius: 50px;
-    height: 7vh;
+    height: 44px;
     margin-top: 1vw;
     left: 50%;
     transform: translate(-50%);
 
 }
+
 
 #search-input
 {
@@ -72,6 +82,15 @@ header
     cursor: text;
     border: none;
     width: 35vw;
+    box-shadow: none;
+}
+
+#search-input:-webkit-autofill,
+#search-input:-webkit-autofill:hover,
+#search-input:-webkit-autofill:focus,
+#search-input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #2f6442 inset !important;
+    -webkit-text-fill-color: white !important;
 }
 
 #search-input:focus
@@ -88,6 +107,14 @@ header
     color: white;
 }
 
+#search-input::-webkit-search-cancel-button {
+    display: none !important;
+}
+
+#search-input::-webkit-search-decoration {
+    display: none !important;
+}
+
 #button
 {
     order: 0;
@@ -97,8 +124,8 @@ header
     border-bottom-left-radius: 50px;
     border-top-left-radius: 50px;
     cursor: pointer;
-    width: 5vw;
-    height: 7vh;
+    width: 55px;
+    height: 44px;
 }
 #button:hover
 {
@@ -107,7 +134,57 @@ header
 
 #imgButton
 {
-    width: 5vh;
-    height: 5vh;
+    width: 30px;
+    height: 30px;
+    margin-left: 18%;
+    margin-top: 5%;
     transform: scaleX(-1);
+}
+
+#buttonInsta, #buttonGit
+{
+    background: none;
+    border: none;
+}
+
+#headerSocial
+{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+    gap: 0.5vw;
+    right: 2.5vw;
+    top: 50%;
+}
+
+#instaLOGO, #gitLOGO
+{
+    width: 2.5vw;
+    height: 2.5vw;
+    cursor: pointer;
+}
+
+#title, #subtitle {
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    width: 100vw;
+}
+
+#title
+{
+    font-family: "Open Sans";
+    font-size: 60px;
+    position: absolute;
+    top: 200px;
+}
+
+#subtitle
+{
+    font-family: "Open Sans";
+    font-size: 30px;
+    position: absolute;
+    top: 300px;
 }

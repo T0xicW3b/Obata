@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/search.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/favicon.ico') }}" type="image/x-icon">
+    <title>{{ plant['Nome Popular'] }}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <header>
+            <div id="headerLogo">
+                <button type="button" id="buttonLOGO">
+                    <img src="{{ url_for('static', filename='assets/images/android-chrome-512x512.png') }}" alt="logo" id="logo">
+                    <h1 id="logoName">Obatã</h1>
+                </button>
+            </div>
+
+            <form id="form-search" action="/pesquisa" method="POST">
+                    <label for="search-input"></label>
+                    <input type="text" id="search-input" name="search-input" placeholder="Pesquisar..." required>
+                    <button type="submit" id="button">
+                        <img src="{{ url_for('static', filename='assets/images/lupa.png') }}" alt="Pesquisar" id="imgButton">                   
+                    </button>
+            </form>
+
+            <div id="headerSocial">
+                <a href="https://www.instagram.com/seconeiti22/" target="_blank" id="buttonInsta">
+                    <img src="{{url_for('static', filename='assets/images/instaLOGO.png')}}" " id="instaLOGO">
+                </a>
+
+                <a href="https://github.com/T0xicW3b/Ilua" target="_blank" id="buttonGit">
+                    <img src="{{url_for('static', filename='assets/images/gitLOGO.png')}}" id="gitLOGO">
+                </a>
+            </div>
+        </header>
+
+    {% if plant %}
+        <h2>{{ plant['Nome Popular'] }}</h2>
+        <p><strong>Nome Científico:</strong> {{ plant['Nome Científico'] }}</p>
+        <p><strong>Uso Medicinal:</strong> {{ plant['Dados da Medicina Tradicional'] }}</p>
+    {% endif %}
+
+    </main>
+    <script src="{{url_for('static', filename='js/script_search.js')}}"></script>
+</body>
+</html>

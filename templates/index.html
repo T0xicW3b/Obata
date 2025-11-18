@@ -3,31 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/favicon/favicon.ico') }}" type="image/x-icon">
-    <title>Iluá</title>
-    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_index.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/favicon.ico') }}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>Obatã</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <main>
         <header>
             <div id="headerLogo">
-                <img src="{{ url_for('static', filename='assets/images/android-chrome-512x512.png') }}" alt="logo" id="logo">
-                <h1 id="logoName">Iluá</h1>
+                <button type="button" id="buttonLOGO">
+                    <img src="{{ url_for('static', filename='assets/images/android-chrome-512x512.png') }}" alt="logo" id="logo">
+                    <h1 id="logoName">Obatã</h1>
+                </button>
             </div>
 
-            <form id="form-search">
-                    <input type="text" id="search-input" placeholder="Pesquisar..." required>
+            <form id="form-search" action="/pesquisa" method="POST">
+                    <label for="search-input"></label>
+                    <input type="text" id="search-input" name="search-input" placeholder="Pesquisar..." required>
                     <button type="submit" id="button">
-                        <img src="{{ url_for('static', filename='assets/images/lupa.png') }}" alt="Pesquisar" id="imgButton">                    </button>
+                        <img src="{{ url_for('static', filename='assets/images/lupa.png') }}" alt="Pesquisar" id="imgButton">                   
+                    </button>
+                    <ul>
+                        <li>Item</li>
+                        <li>Item</li>
+                        <li>Item</li>
+                        <li>Item</li>
+                        <li>Item</li>
+                    </ul>
             </form>
 
             <div id="headerSocial">
+                <a href="https://www.instagram.com/seconeiti22/" target="_blank" id="buttonInsta">
+                    <img src="{{url_for('static', filename='assets/images/instaLOGO.png')}}" " id="instaLOGO">
+                </a>
+
+                <a href="https://github.com/T0xicW3b/Ilua" target="_blank" id="buttonGit">
+                    <img src="{{url_for('static', filename='assets/images/gitLOGO.png')}}" id="gitLOGO">
+                </a>
             </div>
         </header>
+        <div id="content">
+            <h1 id="title">Obatã</h1>
+            <h2 id="subtitle">Legado verde dos ancestrais</h2>
+            <p class="text" id="text1">
+                O Obatã é um projeto desenvolvido para a SECONE (Semana Nacional de
+                Consciência Negra) do IFBA campus ilhéus pelos alunos do curso de TI da sala
+                ITI22, que teve como tema: Ancestralidade, ciência e sustentabilidade em meio
+                aos saberes étnico-raciais na construção do futuro.
+                <br><br>
+                O site em si, foca no conhecimento antigo dos povos nativos brasileiros em relação às plantas medicinais que hoje temos o conhecimento botânico e científico sobre seus efeitos.
+                O site conta com (quantidade de plantas) plantas atualmente. Lista que é prevista para aumentar conforme o avanço das pesquisas dos desenvolvedores (até mesmo durante o desenvolvimento desse site)
+            </p>    
+            <div id="curiosidade">
+                <h2>CURIOSIDADE</h2>
+                <p class="text" id="text2">
+                    Obatã significa folha forte em tupi <br><br>
+                    Oba - Folha <br>
+                    Atã - Substantivo: força. Adjetivo: forte, duro, vigoroso.
+                </p>
+            </div>
+        </div>
     </main>
+    <script src="{{url_for('static', filename='js/script_index.js')}}"></script>
 </body>
 </html>
