@@ -8,38 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Obatã</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <main>
-        <header>
-            <div id="headerLogo">
-                <button type="button" id="buttonLOGO">
-                    <img src="{{ url_for('static', filename='assets/images/android-chrome-512x512.png') }}" alt="logo" id="logo">
-                    <h1 id="logoName">Obatã</h1>
-                </button>
-            </div>
-
-            <form id="form-search" action="/pesquisa" method="POST">
-                    <label for="search-input"></label>
-                    
-                    <input type="text" id="search-input" name="search-input" placeholder="Pesquisar..." required>
-                    <button type="submit" id="button">
-                        <img src="{{ url_for('static', filename='assets/images/lupa.png') }}" alt="Pesquisar" id="imgButton">                   
-                    </button>
-                    
-            </form>
-
-            <div id="headerSocial">
-                <a href="https://www.instagram.com/seconeiti22/" target="_blank" id="buttonInsta">
-                    <img src="{{url_for('static', filename='assets/images/instaLOGO.png')}}" " id="instaLOGO">
-                </a>
-
-                <a href="https://github.com/T0xicW3b/Ilua" target="_blank" id="buttonGit">
-                    <img src="{{url_for('static', filename='assets/images/gitLOGO.png')}}" id="gitLOGO">
-                </a>
-            </div>
-        </header>
         <div id="content">
             <h1 id="title">Obatã</h1>
             <h2 id="subtitle">Legado verde dos ancestrais</h2>
@@ -50,18 +24,68 @@
                 aos saberes étnico-raciais na construção do futuro.
                 <br><br>
                 O site em si, foca no conhecimento antigo dos povos nativos brasileiros em relação às plantas medicinais que hoje temos o conhecimento botânico e científico sobre seus efeitos.
-                O site conta com (quantidade de plantas) plantas atualmente. Lista que é prevista para aumentar conforme o avanço das pesquisas dos desenvolvedores (até mesmo durante o desenvolvimento desse site)
+                O site conta com {{ allPlants }} plantas catalogadas atualmente. Lista que é prevista para aumentar conforme o avanço das pesquisas dos desenvolvedores (até mesmo durante o desenvolvimento desse site).
+                <br>Além do banco de dados, ainda temos um jogo de quiz!<br>
+                Role para baixo para jogar!
             </p>    
             <div id="curiosidade">
                 <h2>CURIOSIDADE</h2>
                 <p class="text" id="text2">
-                    Obatã significa folha forte em tupi <br><br>
+                    Obatã significa folha forte em tupi <br>
                     Oba - Folha <br>
                     Atã - Substantivo: força. Adjetivo: forte, duro, vigoroso.
                 </p>
             </div>
         </div>
+
+        <header>
+            <div id="headerLogo">
+                <button type="submit" id="buttonLOGO">
+                    <img src="{{ url_for('static', filename='assets/images/android-chrome-512x512.png') }}" alt="logo" id="logo">
+                    <h1 id="logoName">Obatã</h1>
+                </button>
+            </div>
+
+            <form id="form-search" name="form-search" onsubmit="searchPlant(); return false;">
+                <label for="form-search"></label>
+                
+                <div id="search">
+                    <input onkeyup="filter()" type="text" id="search-input" name="search-input" placeholder="Pesquisar planta..." required>
+                    <button type="submit" id="button">
+                        <img src="{{ url_for('static', filename='assets/images/lupa.png') }}" alt="Pesquisar" id="imgButton">                   
+                    </button>
+                </div>
+                
+                <ul id="sugestionList">
+                    <!-- essa parte ta no js -->
+                </ul>
+                
+            </form>
+
+            <div id="headerSocial">
+                <a href="https://www.instagram.com/seconeiti22/" target="_blank" id="buttonInsta">
+                    <img src="{{url_for('static', filename='assets/images/instaLOGO.png')}}" id="instaLOGO">
+                </a>
+
+                <a href="https://github.com/T0xicW3b/Ilua" target="_blank" id="buttonGit">
+                    <img src="{{url_for('static', filename='assets/images/gitLOGO.png')}}" id="gitLOGO">
+                </a>
+            </div>
+        </header>
+
+        <div id="gradient"></div>
+        <div id="contentGame">
+            <div id="gameEnter">
+                <h2 id="Obata-name-game">Obatã</h2>
+                <h1 id="title-Obata-game">QUIZ</h1>
+                
+                <div id="start">
+                    <a href="/game" id="start-link">START</a>
+                </div>
+            </div>
+        </div>
     </main>
+
     <script src="{{url_for('static', filename='js/script_index.js')}}"></script>
 </body>
 </html>

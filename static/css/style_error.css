@@ -11,7 +11,8 @@ header
     background-image: linear-gradient(to right, #73f5a0, #3f8658);
     display: flex;
     position: relative;
-    width: 98.9vw; /*em full hd ficou bom assim, ent fica assim*/
+    width: 98.9vw; /*ainda não identifiquei exatamente o que ta fazendo 
+                    esse valor ser mais satisfatório, mas vou corrigir futuramente*/
     height: 11vw;
 }
 
@@ -109,7 +110,7 @@ header
     font-family: "Open Sans";
     font-weight: 200;
     font-size: large;
-    color: rgb(160, 160, 160);
+    color: white;
 }
 
 #search-input::-webkit-search-cancel-button {
@@ -182,6 +183,7 @@ header
     background-color: rgba(122, 122, 122, 0.555);
 }
 
+
 #buttonInsta, #buttonGit
 {
     background: none;
@@ -207,142 +209,38 @@ header
     cursor: pointer;
 }
 
+#title, #subtitle {
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    width: 100vw;
+}
+
+#title
+{
+    font-family: "Open Sans";
+    font-size: 60px;
+    position: absolute;
+    top: 200px;
+}
+
+#subtitle
+{
+    font-family: "Open Sans";
+    font-size: 30px;
+    position: absolute;
+    top: 300px;
+}
+
 #content
 {
     position: absolute;
     display: flex;
     flex-direction: column;
+    gap: 20px;
+    font-family: "Open Sans";
     top: 30vh;
-    width: 60%;
+    text-align: center;
     left: 50%;
     transform: translate(-50%);
-}
-
-#title
-{
-    font-weight: 500;
-    font-size: 60px;
-}
-
-#subtitle
-{
-    margin-top: 0vh;
-    font-weight: 400;
-    color: rgb(39, 39, 39);
-    font-size: 30px;
-}
-
-#title, #subtitle {
-    font-family: "Oswald";    
-    text-transform: uppercase;
-    margin-left: 50%;
-    transform: translate(-50%);
-    text-align: center;
-}
-
-.text, #curiosidade
-{
-    margin-top: 7vh;
-    font-family: "Oswald";
-    font-size: 23px;
-    text-align: center;    
-}
-
-.text
-{
-    font-weight: 400;
-    color: rgb(51, 51, 51);
-}
-
-#curiosidade
-{
-    font-weight: 500;
-    color: rgb(39, 39, 39);
-    margin-top: 3vw;
-    font-size: 20px;
-}
-
-#text2
-{
-    color: rgb(24, 24, 24);
-    margin-top: 1vh;
-}
-
-#gradient
-{
-    position: absolute;
-    background-image: linear-gradient(to bottom, white, #38b6ff);
-    width: 98.9vw;
-    height: 160px;
-    top: 940px;
-}
-
-#contentGame
-{
-    position: absolute;
-    font-family: "Saira", sans-serif;
-    text-align: center;
-    background-image: url(../assets/images/bgGame.png);
-    background-size: cover;
-    top: 1100px;
-    width: 98.9vw;
-    height: 100vh;
-}
-
-#gameEnter
-{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    width: 600px;
-    height: 360px;
-    border-radius: 25px;
-    margin-top: 16vh;
-    left: 50%;
-    transform: translate(-50%);
-}
-
-#Obata-name-game
-{
-    position: relative;
-    color: #4c8b52;
-    font-weight:800;
-    font-size: 37px;
-    margin-left: 90px;
-    top: 25px;
-    transform: translateX(-50%);
-}
-
-#title-Obata-game
-{
-    position: relative;
-    color: #34661a;
-    font-weight: 700;
-    font-size: 80px;
-    margin-left: 170px;
-    top: 50px;
-    transform: translateX(-50%);
-}
-
-#start
-{
-    position: absolute;
-    width: 160px;
-    height: 40px;
-    top: 280px;
-    left: 64%;
-    border-radius: 13px;
-    background-color: #00892c;
-}
-
-#start-link
-{
-    position: absolute;
-    text-decoration: none;
-    margin-right: 100px;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 18px;
 }

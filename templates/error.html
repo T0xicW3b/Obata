@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_search.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_error.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/favicon.ico') }}" type="image/x-icon">
-    <title>{{ plant['Nome Popular'] }}</title>
+    <title>Ops...</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,33 +13,10 @@
 </head>
 <body>
     <main>
-        {% if plant %}
         <div id="content">
-            <h1 id="plant-name">{{ plant['Nome Popular'] }}</h1>
-            <div>
-                <h2>Nome Científico:</h2>
-                <p>{{ plant['Nome Científico'] }}.</p>
-            </div>
-
-            <div>
-                <h2>Uso Medicinal: </h2> 
-                <p>{{ plant['Dados da Medicina Tradicional'] }}.</p> 
-                <!--esses pontos no final do p nas linhas 26 e 21, é pra corrigir um
-                problema na identação/padronização do db, vou corrigir isso no futuro-->
-            </div>
-
-            <div>
-                <h2>Dados Botânicos:</h2> 
-                <p>{{plant['Dados Botânicos']}}</p>
-            </div>
-
-            <div>
-                <h2>Povos que costumavam ou costumam usar:</h2> 
-                <p >{{plant['Povos que costumavam usar']}}</p>
-            </div>
+            <h1>Hmm... parece que não temos essa planta ainda no nosso banco de dados :/</h1>
+            <h1>Tente pesquisar novamente!</h1>
         </div>
-        {% endif %}
-
         <header>
             <div id="headerLogo">
                 <button type="submit" id="buttonLOGO">
@@ -75,6 +52,8 @@
             </div>
         </header>
     </main>
-    <script src="{{url_for('static', filename='js/script_search.js')}}"></script>
+    <!--script do index, porque la tem todas as funcionalidades que essa pagina precisa
+    (sem mais nem menos, inclusive, se por algum motivo eu precisar de uma propria, eu faço)-->
+    <script src="{{ url_for('static', filename='js/script_index.js')}}"></script>
 </body>
 </html>

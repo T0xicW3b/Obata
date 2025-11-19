@@ -1,42 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/favicon.ico') }}" type="image/x-icon">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_game.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="form-content">
         <form action="" method="post">
-            <p class="title">Qual o nome cientifico do {{ question.ask }}?</p>
-            <div> 
-                <input type="radio" name="qu" value="{{ question.a }}">
-                {{ question.a }}</div>
-
-            <div>
-                <input type="radio" name="qu" value="{{ question.b }}">
-                {{ question.b }}
+            <div id="question">
+                <h1 id="logo">OBATÃ QUIZ</h1>
+                <p class="title">Qual o nome científico da planta:<br>{{ question.ask }}?</p>
             </div>
 
-            <div>
-                <input type="radio" name="qu" value="{{ question.c }}">
-                {{ question.c }}
+            <div id="answers">
+                <div>
+                    <button type="submit" name="qu" value="{{ question.a }}" class="radio-input">
+                        <p class="textAnswer">{{ question.a }}</p>
+                        <span class="radio-custom"></span>
+                    </button>
+                </div>
+                    
+                <div>
+                    <button type="submit" name="qu" value="{{ question.b }}" class="radio-input">
+                        <p class="textAnswer">{{ question.b }}</p>
+                        <span class="radio-custom"></span>
+                    </button>
+                </div>
+
+                <div>
+                    <button type="submit" name="qu" value="{{ question.c }}" class="radio-input">
+                        <p class="textAnswer">{{ question.c }}</p>
+                        <span class="radio-custom"></span>
+                    </button>
+                </div>
+
+                <div>
+                    <button type="submit" name="qu" value="{{ question.d }}" class="radio-input">
+                        <p class="textAnswer">{{ question.d }}</p>
+                        <span class="radio-custom"></span>
+                    </button>
+                </div>
+
+                <div>
+                    <button type="submit" name="qu" value="{{ question.e }}" class="radio-input">
+                        <p class="textAnswer">{{ question.e }}</p>
+                        <span class="radio-custom"></span>
+                    </button>
+                </div>
+
             </div>
 
-            <div>
-                <input type="radio" name="qu" value="{{ question.d }}">
-                {{ question.d }}
-            </div>
-
-            <div>
-                <input type="radio" name="qu" value="{{ question.e }}">
-                {{ question.e }}
-            </div>
-
-            <button type="submit">Enviar</button>
         </form>
     </div>
 

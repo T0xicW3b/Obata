@@ -1,0 +1,84 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Saira";
+}
+
+body
+{
+    background-image: url(../assets/images/bgGame.png);
+    background-size: cover;
+}
+
+#show-score
+{
+    position: absolute;
+    background-color: white;
+    width: 550px;
+    height: 570px;
+    text-align: center;
+    border-radius: 30px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#choose-way
+{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 330px;
+    gap: 25px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.button
+{
+    width: 350px;
+    height: 80px;
+    border-radius: 15px;
+    border: none;
+    background-color: #00942f;
+    cursor: pointer;
+}
+
+p
+{
+    font-weight: 500;
+    font-size: 20px;
+    color: white;
+}
+
+#parabens
+{
+    position: relative;
+    font-weight: 600;
+    top: 30px;
+    font-size: 50px;
+}
+
+h1
+{
+    position: relative;
+    font-size: 25px;
+    top: 40px;
+    color: #4f9156;
+    
+}
+
+#score
+{
+    font-size: 40px;
+    color: #438022;
+}
+
+h2
+{
+    position: relative;
+    top: 70px;
+    font-size: 23px;
+    color: black;
+}

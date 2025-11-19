@@ -11,7 +11,8 @@ header
     background-image: linear-gradient(to right, #73f5a0, #3f8658);
     display: flex;
     position: relative;
-    width: 100vw;
+    width: 98.9vw; /*ainda não identifiquei exatamente o que ta fazendo 
+                    esse valor ser mais satisfatório, mas vou corrigir futuramente*/
     height: 11vw;
 }
 
@@ -57,7 +58,7 @@ header
 #form-search
 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     position: absolute;
     background-color: #2f6442;
     border: 0.5px rgba(245, 245, 245, 0.651) solid;
@@ -69,6 +70,11 @@ header
 
 }
 
+#search
+{
+    display: flex;
+    flex-direction: row;
+}
 
 #search-input
 {
@@ -141,6 +147,43 @@ header
     transform: scaleX(-1);
 }
 
+#sugestionList
+{
+    display: none;
+    position: relative;
+    list-style-type: none;
+    background-color: rgb(202, 207, 204);
+    margin: 0%;
+    padding: 0%;
+    border-radius: 10px;
+    margin-top: 3px;
+    width: 35vw;
+    left: 55px;
+}
+.buttonList
+{
+    margin-top: 0.7vh;
+    margin-bottom: 0.7vh;
+    font-family: "Open Sans";
+    font-weight: 600;
+    color: black;
+    font-size: 15px;
+    text-align: left;
+    margin-left: 1vh;
+    padding-left: 1vh;
+    width: 34vw;
+    background: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.buttonList:hover
+{
+    background-color: rgba(122, 122, 122, 0.555);
+}
+
+
 #buttonInsta, #buttonGit
 {
     background: none;
@@ -187,4 +230,29 @@ header
     font-size: 30px;
     position: absolute;
     top: 300px;
+}
+
+#content
+{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    font-family: "Open Sans";
+    top: 30vh;
+    width: 60%;
+    left: 50%;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#plant-name
+{
+    font-size: 60px;
+}
+
+p
+{
+    font-size: 18px;
 }

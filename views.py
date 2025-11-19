@@ -1,28 +1,30 @@
 from app import app
-from flask import render_template, request, session
+from flask import render_template, request, session, send_file
 import pandas as pd
 from game import Question, gen_questions
 
 df = pd.read_csv('data.csv')
 
-@app.route("/")
+@app.get("/")
 def index():
     allPlants = len(df)
-    return render_template("index.html")
+    return render_template("index.html", allPlants=allPlants)
 
-@app.route("/pesquisa", methods=['POST'])
-def search_plant():
-    plantName = request.form.get('search-input')
+@app.get('/data.csv')
+def serve_csv():
+    return send_file('data.csv', mimetype='text/csv')
+
+@app.get("/plantas/<plantName>")
+def plant_info(plantName):
     result = df[df['Nome Popular'].str.lower() == plantName.lower()]
-
+    
     if not result.empty:
         plant = result.iloc[0].to_dict()
         return render_template("search.html", plant=plant)
     
     else:
-        return "Planta não encontrada! <a href='/'>Voltar</a>"
+        return render_template("error.html")
 
-   
 @app.route("/game", methods=["POST", "GET"])
 def game():
     if "index" not in session:
@@ -44,7 +46,7 @@ def game():
     if session["index"] >= len(session['questions']):
         score = session["score"]
         session.clear()
-        return f"Você acertou {score} questões!"
+        return render_template("results.html", score=score)
 
     q = session['questions'][session["index"]]
     return render_template("game.html", question=q)

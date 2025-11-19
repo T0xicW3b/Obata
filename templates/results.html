@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/images/favicon.ico') }}" type="image/x-icon">
+    <title>Pontuação</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_results.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="show-score">
+        <div id="texts">
+            <h1 id="parabens">PARABÉNS!</h1>
+            <h1>VOCÊ ACERTOU</h1>
+            <h1 id="score">{{score}}/10</h1>
+            <h1>QUESTÕES!</h1>
+            <h2>DESEJA JOGAR NOVAMENTE?</h2>
+        </div>
+
+        <div id="choose-way">
+            <button type="button" id="backGame" class="button">
+                <p>JOGAR NOVAMENTE</p>
+            </button>
+
+            <button type="button" id="backIndex" class="button">
+                <p>VOLTAR PARA A PÁGINA INICIAL</p>
+            </button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script_results.js') }}"></script>
+</body>
+</html>
